@@ -1,0 +1,40 @@
+POST — LINKEDIN
+================
+
+Implementei uma Spiking Neural Network do zero para fazer OCR — e neste GIF você vê literalmente a rede "pensando".
+
+O que está acontecendo na animação:
+
+→ À esquerda: o caractere de entrada
+→ No centro: os 16 canais convolucionais disparando spikes a cada timestep (o rastro é o potencial de membrana decaindo)
+→ Em cima à direita: raster plot dos neurônios — repare na ESPARSIDADE. Só ~1% dos neurônios chegam a disparar
+→ Embaixo: o potencial de membrana das top-5 classes disputando ao longo do tempo. A linha verde vence. É a decisão se formando.
+
+Por que SNNs importam:
+
+Diferente de uma CNN tradicional, que executa milhões de multiplicações por imagem, uma rede de pulsos só computa quando um neurônio dispara. Neurônio quieto = zero operações. É o mesmo princípio de eficiência do cérebro biológico — e a razão pela qual hardware neuromórfico (Intel Loihi, IBM TrueNorth) existe.
+
+O que construí, sem usar nenhuma biblioteca de SNN:
+
+• Neurônios LIF (Leaky Integrate-and-Fire) com surrogate gradient próprio pra treinar via backpropagation through time
+• Dataset 100% sintético gerado proceduralmente — ~260 fontes, rotação, blur e ruído. Zero rotulação manual
+• Pipeline completa: binarização (Otsu implementado à mão) → segmentação → classificação → API REST em FastAPI
+• 440K parâmetros, ~94% de acurácia, treino em ~5 min, inferência em ms por caractere — leve o suficiente pra CPU
+
+Código aberto no GitHub: [LINK DO REPO]
+
+Não é sobre reinventar o OCR — o Tesseract existe há décadas e é ótimo. É sobre entender de verdade o que acontece dentro de uma rede neural, do neurônio ao deployment. E SNNs são uma fronteira fascinante de computação eficiente.
+
+Feedback e sugestões são muito bem-vindos. Se você trabalha com edge AI, visão computacional ou computação neuromórfica, adoraria trocar ideia.
+
+#MachineLearning #DeepLearning #ComputerVision #SpikingNeuralNetworks #Neuromorphic #PyTorch #AI #OpenToWork
+
+
+================
+NOTAS PRA VOCÊ (não colar no post)
+================
+
+- Substitua [LINK DO REPO] pelo link do GitHub depois de subir o código
+- O GIF anexo é: demo/spikes.gif
+- Opcional: mencione nos comentários que está open to work com uma frase do tipo:
+  "Estou buscando novas oportunidades em ML/IA — se conhecem vagas, me avisam!"
