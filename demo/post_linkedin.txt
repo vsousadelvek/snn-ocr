@@ -21,7 +21,7 @@ O que construí, sem usar nenhuma biblioteca de SNN:
 • Pipeline completa: binarização (Otsu implementado à mão) → segmentação → classificação → API REST em FastAPI
 • 440K parâmetros, ~94% de acurácia, treino em ~5 min, inferência em ms por caractere — leve o suficiente pra CPU
 
-Código aberto no GitHub: [LINK DO REPO]
+Código aberto no GitHub: https://github.com/vsousadelvek/snn-ocr
 
 Não é sobre reinventar o OCR — o Tesseract existe há décadas e é ótimo. É sobre entender de verdade o que acontece dentro de uma rede neural, do neurônio ao deployment. E SNNs são uma fronteira fascinante de computação eficiente.
 

@@ -2,6 +2,8 @@
 
 OCR construído do zero com uma **Spiking Neural Network (SNN) proprietária** — neurônios LIF (Leaky Integrate-and-Fire) implementados em PyTorch puro, sem bibliotecas de SNN. Leve o suficiente para rodar rápido em CPU, treinável em minutos em GPU.
 
+![SNN processando o caractere K](demo/spikes.gif)
+
 ## Por que SNN?
 
 Redes neurais de pulsos processam informação de forma **esparsa e orientada a eventos**, como o cérebro. Na prática: menos operações, menor consumo de energia e latência baixa — exatamente o que se quer em OCR embarcado/edge. O spike usa uma **surrogate gradient** (derivada de arctan) para permitir backpropagation through time.
